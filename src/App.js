@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Profile from "./components/Profile";
 import SearchProfile from "./components/SearchProfile";
@@ -6,28 +6,59 @@ import SearchProfile from "./components/SearchProfile";
 const API = "https://api.github.com/users";
 
 function App() {
-  const [username, setUsername] = useState("bhagatpratham");
-  const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState("");
-  const [location, setLocation] = useState("");
-  const [followers, setFollowers] = useState("");
-  const [following, setFollowing] = useState("");
-  const [repos, setRepos] = useState("");
+  const [state, setState] = useState({
+    username: "bhagatpratham",
+    name: "",
+    avatar: "",
+    location: "",
+    repos: "",
+    followers: "",
+    following: "",
+    homeUrl: "",
+    notFound: "",
+  });
+
+  const inputRef = useRef(null);
 
   function fetchProfile(username) {
     let url = `${API}/${username}`;
+    console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setUsername(data.login);
-      });
+        setState({
+          username: data.login,
+          name: data.name,
+          avatar: data.avatar_url,
+          location: data.location,
+          repos: data.public_repos,
+          followers: data.followers,
+          following: data.following,
+          homeUrl: data.html_url,
+        });
+      })
+      .catch((error) => console.log("Oops! . There Is A Problem"));
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let username = inputRef.current.value;
+    fetchProfile(username);
+  };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
 
   return (
     <div>
       <section className='card'>
-        <SearchProfile fetchProfile={fetchProfile} />
-        <Profile />
+        <SearchProfile
+          fetchProfile={fetchProfile}
+          handleSubmit={handleSubmit}
+          inputRef={inputRef}
+        />
+        <Profile data={state} />
       </section>
       <span className='pratham'>
         GitHub Card With ReactJs - Created By{" "}

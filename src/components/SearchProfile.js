@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 
-const SearchProfile = () => {
+const SearchProfile = ({ handleSubmit, inputRef }) => {
   return (
     <div className='search-box'>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
-          <input type='search' placeholder='Type Username + Enter' />
+          <input
+            type='search'
+            placeholder='Type Username + Enter'
+            ref={inputRef}
+          />
         </label>
       </form>
     </div>

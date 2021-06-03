@@ -66,6 +66,7 @@ function App() {
           href='https://twitter.com/pratham__10'
           target='_blank'
           title='Pratham Bhagat'
+          className='Pratham'
         >
           Pratham Bhagat
         </a>

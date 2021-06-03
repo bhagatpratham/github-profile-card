@@ -15,8 +15,8 @@ const Profile = ({ data }) => {
   else
     return (
       <div>
-        <section>
-          <div className='github-profile-info'>
+        <section className='github-profile-info'>
+          <div className='__info'>
             <a
               href={data.homeUrl}
               target='_blank'
@@ -27,7 +27,7 @@ const Profile = ({ data }) => {
 
             <h2 className='Username'>
               <a href={data.homeUrl} title={data.username} target='_blank'>
-                {data.name || data.username}
+                <span className='Username'>{data.name || data.username}</span>
               </a>
             </h2>
             <h3 className='Location'>{data.location}</h3>
@@ -37,7 +37,7 @@ const Profile = ({ data }) => {
               <li>
                 <a href={followers} target='_blank' title='Number Of Followers'>
                   <i>{data.followers}</i>
-                  <span>Followers</span>
+                  <span className='followers'>Followers</span>
                 </a>
               </li>
               <li>
@@ -47,13 +47,13 @@ const Profile = ({ data }) => {
                   title='Number Of Repositoriy'
                 >
                   <i>{data.repos}</i>
-                  <span>Repositories</span>
+                  <span className='followers'>Repositories</span>
                 </a>
               </li>
               <li>
                 <a href={following} target='_blank' title='Number Of Following'>
                   <i>{data.following}</i>
-                  <span>Following</span>
+                  <span className='followers'>Following</span>
                 </a>
               </li>
             </ul>

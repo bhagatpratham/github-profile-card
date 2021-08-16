@@ -1,0 +1,137 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700,600);
+
+:root {
+  --bg-color: #ecf0f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: "Titllium", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.card {
+  width: 26rem;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.search-box label {
+  position: relative;
+}
+
+.search-box label::after {
+  position: absolute;
+  content: "";
+  border-right: 0.625rem solid transparent;
+  border-left: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid #fff;
+  bottom: -1.0625rem;
+  right: 50%;
+  margin-right: -0.3125rem;
+}
+
+input[type="search"] {
+  width: 100%;
+  font-family: "Titllium", sans-serif;
+  font-size: 1.5rem;
+  color: #1a4e8e;
+  border: 0;
+  padding: 0.75rem 0.9375rem 0.9375rem;
+  border-radius: 0.3125rem 0.3125rem 0 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.github-profile-info {
+  width: 100%;
+}
+
+.__info {
+  background: #fff;
+  text-align: center;
+  padding: 1.875rem 0.9375rem;
+}
+
+.__info img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 0 0.0625rem rgba(0, 0, 0, 0.5);
+}
+
+.Username {
+  font-size: 2.4rem;
+  color: #1a4e8e;
+  text-decoration: none;
+}
+
+.__info h3 {
+  font-size: 1.1885rem;
+  color: darken(var(--bg-color), 16%);
+}
+
+.github-profile-stats {
+  background-color: #1a4e8e;
+  text-align: center;
+  padding: 1.875rem 0.9375rem;
+  border-radius: 0 0 0.3125rem 0.3125rem;
+}
+
+ul {
+  direction: ltr;
+}
+
+li {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.followers {
+  font-size: 0.844rem;
+  letter-spacing: 0.0625rem;
+  color: #2776d7;
+}
+
+i {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+}
+
+.pratham {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2776d7;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Pratham {
+  text-decoration: none;
+  color: #1a4e8e;
+}
